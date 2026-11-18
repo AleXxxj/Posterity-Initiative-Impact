@@ -215,7 +215,7 @@ h1 em, h2 em, .site-footer__line em {
 .panel__row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--line); }
 .panel__row small { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); }
 .panel__row b { display: block; font-size: 1.35rem; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; margin-top: 4px; }
-.panel--opp { width: 82%; display: block; margin: -34px 0 0 auto; transform: translate(calc(var(--tx, 0) * 16px), calc(var(--ty, 0) * 16px)); -webkit-backdrop-filter: blur(30px) saturate(1.6); backdrop-filter: blur(30px) saturate(1.6); background: linear-gradient(140deg, rgba(232, 188, 85, 0.18), rgba(255, 255, 255, 0.04) 60%); border-color: rgba(246, 226, 168, 0.3); }
+.panel--opp { width: 86%; display: block; margin: 14px 0 0 auto; transform: translate(calc(var(--tx, 0) * 16px), calc(var(--ty, 0) * 16px)); -webkit-backdrop-filter: blur(30px) saturate(1.6); backdrop-filter: blur(30px) saturate(1.6); background: linear-gradient(140deg, rgba(232, 188, 85, 0.18), rgba(255, 255, 255, 0.04) 60%); border-color: rgba(246, 226, 168, 0.3); }
 .panel--opp h3 { font-size: 1.12rem; margin-bottom: 6px; }
 .panel--opp p { color: var(--muted); font-size: 0.88rem; }
 .panel__days { color: var(--amber); letter-spacing: 0.12em; }
@@ -446,7 +446,7 @@ th { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; colo
     .opp__month { margin-top: 0; }
     .opp-search { max-width: none; }
     .modal__content { padding: 40px 22px 26px; }
-    .panel--opp { width: 92%; }
+    .panel--opp { width: 100%; }
     .update, .plain-list li { padding: 22px; }
 }
 
