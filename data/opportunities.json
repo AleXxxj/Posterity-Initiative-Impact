@@ -1,0 +1,50 @@
+{
+  "updated": "2026-11-18",
+  "items": [
+    {
+      "title": "Commonwealth Shared Scholarships 2027/28",
+      "organiser": "Commonwealth Scholarship Commission (UK)",
+      "type": "Scholarship",
+      "deadline": "2026-12-08",
+      "deadlineNote": "Closes 16:00 GMT",
+      "summary": "Fully funded one-year Master's study at participating UK universities, covering tuition, return airfare and a monthly living allowance.",
+      "eligibility": "Nigerian citizens resident in Nigeria with at least an upper second-class first degree, who could not otherwise afford to study in the UK.",
+      "url": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-shared-scholarships/",
+      "checked": "2026-11-18"
+    },
+    {
+      "title": "Gates Cambridge Scholarship 2027",
+      "organiser": "Gates Cambridge Trust, University of Cambridge",
+      "type": "Scholarship",
+      "deadline": "2026-12-08",
+      "deadlineNote": "8 December 2026 or 6 January 2027, depending on your course",
+      "summary": "Scholarships for postgraduate study at the University of Cambridge. Check the course funding deadline for the course you are applying to.",
+      "eligibility": "Citizens of any country outside the UK applying for a full-time postgraduate course at Cambridge.",
+      "url": "https://www.gatescambridge.org/apply/timeline/",
+      "checked": "2026-11-18"
+    },
+    {
+      "title": "TEF Entrepreneurship Programme",
+      "organiser": "Tony Elumelu Foundation",
+      "type": "Grant",
+      "opens": "2027-01-01",
+      "deadline": "2027-03-01",
+      "deadlineNote": "Portal opens 1 January and closes 1 March each year",
+      "summary": "Business training, mentoring and US$5,000 in non-refundable seed capital for participants who complete the programme.",
+      "eligibility": "Africans aged 18 or over, living in Africa, with a business idea or a business no more than five years old.",
+      "url": "https://www.tonyelumelufoundation.org/tef-entrepreneurship-programme",
+      "checked": "2026-11-18"
+    },
+    {
+      "title": "Mastercard Foundation Scholars Program",
+      "organiser": "Mastercard Foundation and partner universities",
+      "type": "Scholarship",
+      "deadline": null,
+      "deadlineNote": "Deadlines vary by partner university",
+      "summary": "Scholarships for study at partner universities in Africa and abroad. You apply directly to the partner institution you want to attend.",
+      "eligibility": "Set by each partner institution. The Foundation never asks individuals for payment.",
+      "url": "https://www.mastercardfdn.org/en/what-we-do/our-programs/mastercard-foundation-scholars-program/where-to-apply/",
+      "checked": "2026-11-18"
+    }
+  ]
+}

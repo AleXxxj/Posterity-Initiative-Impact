@@ -3,381 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FUPA Foundation Nigeria - Igniting dignity and building futures through sustainable education, health, and economic empowerment programs.">
-    
-    <title>FUPA Foundation Nigeria | Igniting Dignity, Building Futures</title>
-    
-    <!-- Google Fonts -->
+    <title>Posterity Impact Initiative</title>
+    <meta name="description" content="Posterity Impact Initiative is a Nigerian non-profit working in education, mentorship and access to opportunity.">
+    <link rel="icon" href="assets/logo.png">
+    <meta name="theme-color" content="#090511">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom Stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@1,8..60,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <!-- ==================== PRE-HEADER ==================== -->
-    <div class="pre-header">
-        <div class="container pre-header__inner">
-            <span><i class="fas fa-check-circle"></i> CAC Registered: RC-1234567</span>
-            <span><i class="fas fa-phone"></i> +234 800 000 0000</span>
-        </div>
-    </div>
-
-    <!-- ==================== MAIN HEADER ==================== -->
-    <header class="header" id="header">
-        <div class="container header__inner">
-            <a href="#" class="header__logo">
-                <span class="header__logo-text">FUPA</span>
-                <span class="header__logo-sub">Foundation Nigeria</span>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="index.html">
+                <span class="brand__mark"><img src="assets/logo.png" alt="" width="31" height="33"></span>
+                <span class="brand__name"><span>Posterity</span><span>Impact Initiative</span></span>
             </a>
-            
-            <nav class="nav" id="nav">
+            <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">Menu</button>
+            <nav class="nav" id="nav" aria-label="Main">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link nav__link--active">Home</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="#work" class="nav__link">Our Work</a></li>
-                    <li class="nav__item"><a href="#impact" class="nav__link">Impact</a></li>
-                    <li class="nav__item"><a href="#partners" class="nav__link">Partners</a></li>
-                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    <li><a class="nav__link" href="about.html">About</a></li>
+                    <li><a class="nav__link" href="our-work.html">Our Work</a></li>
+                    <li><a class="nav__link" href="opportunities.html">Opportunities</a></li>
+                    <li><a class="nav__link" href="transparency.html">Transparency</a></li>
+                    <li><a class="nav__link" href="news.html">News</a></li>
+                    <li><a class="nav__link" href="get-involved.html">Get Involved</a></li>
                 </ul>
+                <a class="btn" href="get-involved.html#give" data-donate>Donate</a>
             </nav>
-            
-            <a href="#donate" class="btn btn--primary header__donate-btn">Donate Now</a>
-            
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
-                <span class="mobile-toggle__bar"></span>
-                <span class="mobile-toggle__bar"></span>
-                <span class="mobile-toggle__bar"></span>
-            </button>
         </div>
     </header>
 
-    <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero" id="home">
-        <div class="hero__overlay"></div>
-        <div class="container hero__content">
-            <span class="hero__badge fade-in-up">Impacting Lives Across Nigeria Since 2018</span>
-            <h1 class="hero__title fade-in-up delay-1">Igniting Dignity.<br>Building Futures.</h1>
-            <p class="hero__subtitle fade-in-up delay-2">
-                We partner with communities across Nigeria to deliver sustainable solutions 
-                in education, health, and economic empowerment. We don't just give aid; 
-                we ignite lasting change.
-            </p>
-            <div class="hero__cta fade-in-up delay-3">
-                <a href="#donate" class="btn btn--primary btn--lg">Support Our Work</a>
-                <a href="#partners" class="btn btn--outline btn--lg">Partner With Us</a>
-            </div>
-        </div>
-        <div class="hero__scroll">
-            <span>Scroll to explore</span>
-            <i class="fas fa-chevron-down hero__scroll-icon"></i>
-        </div>
-    </section>
-
-    <!-- ==================== IMPACT COUNTER BAR ==================== -->
-    <section class="counter-bar">
-        <div class="container counter-bar__inner">
-            <div class="counter-bar__item">
-                <span class="counter-bar__number" id="counter1">0</span>
-                <span class="counter-bar__label">Lives Impacted</span>
-            </div>
-            <div class="counter-bar__item">
-                <span class="counter-bar__number" id="counter2">0</span>
-                <span class="counter-bar__label">Communities Reached</span>
-            </div>
-            <div class="counter-bar__item">
-                <span class="counter-bar__number" id="counter3">0</span>
-                <span class="counter-bar__label">Active Programs</span>
-            </div>
-            <div class="counter-bar__item">
-                <span class="counter-bar__number" id="counter4">0</span>
-                <span class="counter-bar__suffix">%</span>
-                <span class="counter-bar__label">Funds to Mission</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== HOW WE CREATE CHANGE ==================== -->
-    <section class="change" id="work">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-header__badge">What We Do</span>
-                <h2 class="section-header__title">How We Create Change</h2>
-                <p class="section-header__subtitle">
-                    Our approach is holistic, sustainable, and community-led. We focus on three 
-                    interconnected pillars that break the cycle of poverty.
-                </p>
-            </div>
-            
-            <div class="change__grid">
-                <!-- Card 1 -->
-                <div class="change-card">
-                    <div class="change-card__icon">
-                        <i class="fas fa-book-open"></i>
+    <main id="main">
+        <section class="hero">
+            <div class="wrap">
+                <div class="hero__inner">
+                    <div>
+                        <span class="chip"><i></i> Nigerian non-profit &middot; Established 2026</span>
+                        <h1>Opportunity that <em>outlives us.</em></h1>
+                        <p class="lead">
+                            Posterity Impact Initiative works in education, mentorship and access to
+                            opportunity, for the generation that comes next. Our money and our
+                            progress are public from day one.
+                        </p>
+                        <div class="hero__actions">
+                            <a class="btn" href="opportunities.html">Find an opportunity</a>
+                            <a class="btn btn--ghost" href="our-work.html">See our work</a>
+                        </div>
                     </div>
-                    <h3 class="change-card__title">Quality Education</h3>
-                    <p class="change-card__text">
-                        We equip underserved schools with resources, train teachers, and provide 
-                        scholarships, ensuring every child has the tools to learn and lead.
-                    </p>
-                    <a href="#" class="change-card__link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                
-                <!-- Card 2 -->
-                <div class="change-card">
-                    <div class="change-card__icon">
-                        <i class="fas fa-heartbeat"></i>
+
+                    <div class="stage" id="stage" data-ledger>
+                        <span class="stage__halo" aria-hidden="true"></span>
+                        <div class="stage__tilt">
+                            <a class="glass panel panel--ledger" href="transparency.html" data-glow>
+                                <p class="panel__head"><span>Public ledger</span><span class="panel__live">Live</span></p>
+                                <p class="panel__big" data-ledger-balance>&#8358;0</p>
+                                <p class="panel__sub">Current balance, open for anyone to check</p>
+                                <div class="panel__row">
+                                    <div><small>Received</small><b data-ledger-in>&#8358;0</b></div>
+                                    <div><small>Spent</small><b data-ledger-out>&#8358;0</b></div>
+                                </div>
+                            </a>
+                            <a class="glass panel panel--opp" id="heroOpp" href="opportunities.html" data-glow hidden>
+                                <p class="panel__head"><span>Next deadline</span><span class="panel__days" id="heroOppDays"></span></p>
+                                <h3 id="heroOppTitle"></h3>
+                                <p id="heroOppOrg"></p>
+                            </a>
+                            <p class="glass panel--note"><b id="heroOppCount">0</b> opportunities checked against official sources</p>
+                        </div>
                     </div>
-                    <h3 class="change-card__title">Community Health</h3>
-                    <p class="change-card__text">
-                        From maternal care to clean water initiatives, we deliver healthcare solutions 
-                        that build resilient families and prevent disease before it strikes.
-                    </p>
-                    <a href="#" class="change-card__link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                
-                <!-- Card 3 -->
-                <div class="change-card">
-                    <div class="change-card__icon">
-                        <i class="fas fa-seedling"></i>
+
+                <nav class="hero__index" aria-label="Start here">
+                    <a href="our-work.html" data-glow><small>01</small><strong>Our work</strong><span>Education, mentorship and access.</span></a>
+                    <a href="opportunities.html" data-glow><small>02</small><strong>Opportunities</strong><span>Scholarships and grants, checked by us.</span></a>
+                    <a href="transparency.html" data-glow><small>03</small><strong>Transparency</strong><span>Every naira, on public record.</span></a>
+                </nav>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap">
+                <p class="statement">
+                    We are a young organisation. We would rather show you a short, true record
+                    than a long, impressive one, and add to it as the work is done.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap split">
+                <div class="split__head">
+                    <span class="eyebrow">Our work</span>
+                    <h2>Where we are focusing</h2>
+                    <p>Three areas we are building programmes in.</p>
+                    <a class="arrow-link" href="our-work.html">More about our work</a>
+                </div>
+                <div class="rows">
+                    <a class="row" data-glow href="our-work.html#education">
+                        <span class="row__num">01</span>
+                        <div>
+                            <h3>Education</h3>
+                            <p>Supporting young Nigerians to get into learning and stay in it.</p>
+                        </div>
+                    </a>
+                    <a class="row" data-glow href="our-work.html#mentorship">
+                        <span class="row__num">02</span>
+                        <div>
+                            <h3>Leadership and mentorship</h3>
+                            <p>Connecting young people with mentors and practical skills.</p>
+                        </div>
+                    </a>
+                    <a class="row" data-glow href="our-work.html#opportunity">
+                        <span class="row__num">03</span>
+                        <div>
+                            <h3>Access to opportunity</h3>
+                            <p>Making sure information is never the reason someone misses out.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" data-opps-home>
+            <div class="wrap split">
+                <div class="split__head">
+                    <span class="eyebrow">Opportunities</span>
+                    <h2>Closing soon</h2>
+                    <p>Scholarships, grants and trainings open to Nigerians, checked by us against the official source.</p>
+                    <a class="arrow-link" href="opportunities.html">See all opportunities</a>
+                </div>
+                <div class="opps" id="oppHome"></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap split">
+                <div class="split__head">
+                    <span class="eyebrow">News</span>
+                    <h2>Latest from us</h2>
+                    <a class="arrow-link" href="news.html">All news</a>
+                </div>
+                <div class="updates">
+                    <article class="update">
+                        <span class="update__date">November 2026</span>
+                        <div>
+                            <h3><a href="news.html#ledger">Our books are open</a></h3>
+                            <p>We have published our ledger before receiving a single donation.</p>
+                        </div>
+                    </article>
+                    <article class="update">
+                        <span class="update__date">9 November 2026</span>
+                        <div>
+                            <h3><a href="news.html#registered">We are officially registered</a></h3>
+                            <p>Posterity Impact Initiative is now an incorporated non-profit in Nigeria.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="band" data-ledger>
+            <div class="wrap"><div class="glass band__inner" data-glow>
+                <div>
+                    <span class="eyebrow">Transparency</span>
+                    <h2>Follow the money</h2>
+                    <p>Everything we receive and everything we spend is listed on a public ledger.</p>
+                    <a class="arrow-link" href="transparency.html">View the full ledger</a>
+                </div>
+                <div class="figures">
+                    <div class="figure"><span class="figure__label">Received</span><span class="figure__value" data-ledger-in>&#8358;0</span></div>
+                    <div class="figure"><span class="figure__label">Spent</span><span class="figure__value" data-ledger-out>&#8358;0</span></div>
+                    <div class="figure"><span class="figure__label">Balance</span><span class="figure__value" data-ledger-balance>&#8358;0</span></div>
+                </div>
+            </div></div>
+        </section>
+
+        <section class="cta">
+            <div class="wrap"><div class="cta__inner" data-glow>
+                <h2>Help us build something <em>that lasts.</em></h2>
+                <div class="cta__actions">
+                    <a class="btn" href="get-involved.html#give" data-donate>Donate</a>
+                    <a class="arrow-link" href="get-involved.html">Other ways to help</a>
+                </div>
+            </div></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="site-footer__top">
+                <p class="site-footer__line">Opportunity that <em>outlives us.</em></p>
+            </div>
+        </div>
+        <div class="wrap site-footer__grid">
+            <div>
+                <p class="site-footer__name">Posterity Impact Initiative</p>
+                <p>A Nigerian non-profit working so that the next generation inherits more opportunity than the last.</p>
+                <form class="newsletter" id="newsletterForm" novalidate>
+                    <label for="newsletterEmail">Get our updates by email</label>
+                    <div class="newsletter__row">
+                        <input type="email" id="newsletterEmail" class="modal__input" placeholder="you@example.com" autocomplete="email" required>
+                        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <button type="submit" class="btn">Subscribe</button>
                     </div>
-                    <h3 class="change-card__title">Economic Empowerment</h3>
-                    <p class="change-card__text">
-                        We invest in skills training, micro-grants, and agribusiness, turning 
-                        beneficiaries into entrepreneurs who uplift their entire communities.
-                    </p>
-                    <a href="#" class="change-card__link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+                    <p class="form-note" id="newsletterNote" role="status"></p>
+                </form>
             </div>
-        </div>
-    </section>
-
-    <!-- ==================== FEATURED STORY ==================== -->
-    <section class="featured-story" id="about">
-        <div class="container featured-story__inner">
-            <div class="featured-story__image">
-                <div class="featured-story__img-placeholder">
-                    <i class="fas fa-quote-right"></i>
-                </div>
-            </div>
-            <div class="featured-story__content">
-                <span class="section-header__badge">Featured Story</span>
-                <blockquote class="featured-story__quote">
-                    "Before FUPA Foundation came to our community, I had never seen the inside 
-                    of a classroom. Today, I am not just a student — I am a future teacher."
-                </blockquote>
-                <p class="featured-story__name">— Fatima Bello, Scholarship Recipient, Kano State</p>
-                <a href="#" class="btn btn--secondary">Read Fatima's Full Story</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== TRANSPARENCY CALLOUT ==================== -->
-    <section class="transparency" id="impact">
-        <div class="container">
-            <div class="transparency__box">
-                <div class="transparency__icon">
-                    <i class="fas fa-lock"></i>
-                </div>
-                <h2 class="transparency__title">We Believe Trust Is Built in the Light</h2>
-                <p class="transparency__text">
-                    We publish our financial reports annually and maintain a strict governance board. 
-                    You deserve to know exactly how your generosity translates into impact.
-                </p>
-                <a href="#" class="btn btn--secondary btn--lg">
-                    <i class="fas fa-file-pdf"></i> View Our Financial Reports
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== PARTNERS SECTION ==================== -->
-    <section class="partners" id="partners">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-header__badge">Our Supporters</span>
-                <h2 class="section-header__title">Trusted by Organizations</h2>
-            </div>
-            <div class="partners__grid">
-                <div class="partners__item"><i class="fas fa-building"></i> EduTrust Nigeria</div>
-                <div class="partners__item"><i class="fas fa-hospital"></i> HealthBridge Africa</div>
-                <div class="partners__item"><i class="fas fa-hand-holding-heart"></i> Global Hope Fund</div>
-                <div class="partners__item"><i class="fas fa-graduation-cap"></i> LearnAfrica</div>
-                <div class="partners__item"><i class="fas fa-tint"></i> CleanWater Int'l</div>
-                <div class="partners__item"><i class="fas fa-users"></i> CommunityFirst</div>
-            </div>
-            <div class="partners__cta">
-                <h3>Want to partner with us?</h3>
-                <p>Join these organizations in making a lasting difference across Nigeria.</p>
-                <a href="#contact" class="btn btn--primary">Become a Partner</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== NEWSLETTER ==================== -->
-    <section class="newsletter">
-        <div class="container newsletter__inner">
-            <div class="newsletter__content">
-                <h2 class="newsletter__title">Stay Connected to the Mission</h2>
-                <p class="newsletter__text">
-                    Receive impact stories, quarterly reports, and opportunities to get involved. 
-                    No spam, just purpose.
-                </p>
-            </div>
-            <form class="newsletter__form" id="newsletterForm">
-                <input type="email" class="newsletter__input" placeholder="Enter your email address" required>
-                <button type="submit" class="btn btn--primary newsletter__btn">Subscribe</button>
-            </form>
-            <div class="newsletter__success" id="newsletterSuccess">
-                <i class="fas fa-check-circle"></i> Thank you for subscribing! Check your email to confirm.
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================= Donate Modal ===============================
-      REPLACE the entire existing <div class="modal" id="donateModal"> ... </div>
-      block in index.html with this version.
-      New: donor name + email fields (Paystack requires an email),
-      and an inline error message area instead of alert().
-      ============================================================ -->
-
-    <div class="modal" id="donateModal">
-      <div class="modal__overlay" id="modalOverlay"></div>
-      <div class="modal__content">
-        <button class="modal__close" id="modalClose">&times;</button>
-        <span class="section-header__badge">Make a Difference</span>
-        <h2 class="modal__title">Support Our Mission</h2>
-        <p class="modal__text">Choose an amount to donate. Every Naira transforms lives.</p>
-
-        <div class="modal__amounts">
-            <button class="modal__amount" data-amount="5000">&#8358;5,000</button>
-            <button class="modal__amount" data-amount="10000">&#8358;10,000</button>
-            <button class="modal__amount modal__amount--active" data-amount="25000">&#8358;25,000</button>
-            <button class="modal__amount" data-amount="50000">&#8358;50,000</button>
-            <button class="modal__amount" data-amount="100000">&#8358;100,000</button>
-        </div>
-
-        <div class="modal__custom">
-            <label for="customAmount">Or enter a custom amount (&#8358;):</label>
-            <input type="number" id="customAmount" class="modal__input" placeholder="Enter amount" min="1000">
-        </div>
-
-        <!-- NEW: donor details -->
-        <div class="modal__custom">
-            <label for="donorName">Your name</label>
-            <input type="text" id="donorName" class="modal__input" placeholder="Full name" autocomplete="name">
-        </div>
-        <div class="modal__custom">
-            <label for="donorEmail">Email address (for your receipt)</label>
-            <input type="email" id="donorEmail" class="modal__input" placeholder="you@example.com" autocomplete="email" required>
-        </div>
-
-        <div class="modal__frequency">
-            <label class="modal__radio">
-                <input type="radio" name="frequency" value="once" checked> One-time donation
-            </label>
-            <label class="modal__radio">
-                <input type="radio" name="frequency" value="monthly"> Monthly donation
-            </label>
-        </div>
-
-        <!-- NEW: inline error message -->
-        <p class="modal__error" id="donateError" hidden></p>
-
-        <button class="btn btn--primary btn--lg btn--block" id="donateSubmit">
-            Proceed to Payment <i class="fas fa-arrow-right"></i>
-        </button>
-        <p class="modal__secure"><i class="fas fa-lock"></i> Secured by Paystack. Your card details never touch our servers.</p>
-      </div>
-  </div>
-
-  <!-- ============================================================
-     ADD this to styles.css (anywhere in the MODAL section):
-
-  .modal__error {
-    background-color: #FDECEA;
-    color: #B3261E;
-    border: 1px solid #F5C6C0;
-    border-radius: var(--radius-sm);
-    padding: 0.7rem 1rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    text-align: left;
-  }
-     ============================================================ -->
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer" id="contact">
-        <div class="container footer__grid">
-            <div class="footer__col">
-                <a href="#" class="footer__logo">
-                    <span class="footer__logo-text">FUPA</span>
-                    <span class="footer__logo-sub">Foundation Nigeria</span>
-                </a>
-                <p class="footer__about">
-                    Igniting dignity and building futures across Nigeria through sustainable, 
-                    community-led development programs.
-                </p>
-                <div class="footer__social">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            
-            <div class="footer__col">
-                <h4 class="footer__heading">Quick Links</h4>
-                <ul class="footer__links">
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#work">Our Programs</a></li>
-                    <li><a href="#impact">Impact Reports</a></li>
-                    <li><a href="#">Board & Governance</a></li>
-                    <li><a href="#">Careers</a></li>
+            <div>
+                <h4>Organisation</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="our-work.html">Our Work</a></li>
+                    <li><a href="opportunities.html">Opportunities</a></li>
+                    <li><a href="transparency.html">Transparency</a></li>
+                    <li><a href="news.html">News</a></li>
                 </ul>
             </div>
-            
-            <div class="footer__col">
-                <h4 class="footer__heading">Contact Us</h4>
-                <ul class="footer__contact">
-                    <li><i class="fas fa-map-marker-alt"></i> 12 Foundation Road, Abuja, Nigeria</li>
-                    <li><i class="fas fa-phone"></i> +234 800 000 0000</li>
-                    <li><i class="fas fa-envelope"></i> hello@fupafoundation.org</li>
+            <div>
+                <h4>Take part</h4>
+                <ul>
+                    <li><a href="get-involved.html#give">Donate</a></li>
+                    <li><a href="get-involved.html#partner">Partner with us</a></li>
+                    <li><a href="get-involved.html#share">Spread the word</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
                 </ul>
             </div>
-            
-            <div class="footer__col">
-                <h4 class="footer__heading">Support Our Work</h4>
-                <p class="footer__donate-text">
-                    Your generosity transforms lives. Every Naira makes a difference.
-                </p>
-                <a href="#donate" class="btn btn--primary btn--block">Donate Now</a>
-            </div>
         </div>
-        
-        <div class="footer__bottom">
-            <div class="container footer__bottom-inner">
-                <p>&copy; 2026 FUPA Foundation Nigeria. RC-1234567. All rights reserved.</p>
-                <div class="footer__legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
-                </div>
-            </div>
+        <div class="wrap site-footer__legal">
+            <p>&copy; 2026 Posterity Impact Initiative. Registered in Nigeria as Incorporated Trustees, No. 9995471.</p>
         </div>
     </footer>
 
-    <!-- ==================== BACK TO TOP BUTTON ==================== -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <div class="modal" id="donateModal" role="dialog" aria-modal="true" aria-labelledby="donateTitle">
+        <div class="modal__overlay" id="modalOverlay"></div>
+        <div class="modal__content">
+            <button class="modal__close" id="modalClose" aria-label="Close">&times;</button>
+            <h2 class="modal__title" id="donateTitle">Make a donation</h2>
+            <p class="modal__text">Choose an amount. You will complete payment on Paystack's secure page.</p>
 
-    <!-- JavaScript -->
+            <div class="modal__amounts">
+                <button class="modal__amount" data-amount="5000">&#8358;5,000</button>
+                <button class="modal__amount" data-amount="10000">&#8358;10,000</button>
+                <button class="modal__amount modal__amount--active" data-amount="25000">&#8358;25,000</button>
+                <button class="modal__amount" data-amount="50000">&#8358;50,000</button>
+                <button class="modal__amount" data-amount="100000">&#8358;100,000</button>
+                <button class="modal__amount" data-amount="250000">&#8358;250,000</button>
+            </div>
+
+            <div class="modal__custom">
+                <label for="customAmount">Or another amount (&#8358;)</label>
+                <input type="number" id="customAmount" class="modal__input" min="1000" inputmode="numeric">
+            </div>
+            <div class="modal__custom">
+                <label for="donorName">Your name</label>
+                <input type="text" id="donorName" class="modal__input" autocomplete="name">
+            </div>
+            <div class="modal__custom">
+                <label for="donorEmail">Email address, for your receipt</label>
+                <input type="email" id="donorEmail" class="modal__input" autocomplete="email" required>
+            </div>
+
+            <div class="modal__frequency">
+                <label class="modal__radio"><input type="radio" name="frequency" value="once" checked> One-time</label>
+                <label class="modal__radio"><input type="radio" name="frequency" value="monthly"> Monthly</label>
+            </div>
+
+            <p class="modal__error" id="donateError" hidden></p>
+            <button class="btn btn--block" id="donateSubmit">Continue to payment</button>
+            <p class="modal__secure">Payments are processed by Paystack. Card details never reach our servers.</p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

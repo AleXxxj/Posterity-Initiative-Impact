@@ -49,13 +49,13 @@ async function sendReceipt({ email, name, amount, frequency, reference }) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: process.env.EMAIL_FROM || 'FUPA Foundation <onboarding@resend.dev>',
+      from: process.env.EMAIL_FROM || 'Posterity Impact Initiative <onboarding@resend.dev>',
       to: [email],
-      subject: `Thank you for your ${freqText} to FUPA Foundation`,
+      subject: `Thank you for your ${freqText} to Posterity Impact Initiative`,
       html: `
         <div style="font-family: Georgia, serif; max-width: 560px; margin: 0 auto; color: #2B2B2B;">
           <div style="background: #1F4D42; color: #fff; padding: 28px 32px; border-radius: 12px 12px 0 0;">
-            <h1 style="margin: 0; font-size: 22px;">FUPA Foundation Nigeria</h1>
+            <h1 style="margin: 0; font-size: 22px;">Posterity Impact Initiative</h1>
             <p style="margin: 4px 0 0; color: #E8B44F; font-size: 12px; letter-spacing: 2px;">IGNITING DIGNITY. BUILDING FUTURES.</p>
           </div>
           <div style="border: 1px solid #E8E0D8; border-top: 0; padding: 32px; border-radius: 0 0 12px 12px; background: #FDF9F5;">
@@ -67,7 +67,7 @@ async function sendReceipt({ email, name, amount, frequency, reference }) {
             ${frequency === 'monthly'
               ? '<p style="font-size:14px; color:#6B6B6B;">This is a monthly gift — your card will be charged automatically each month. You can cancel anytime by replying to this email.</p>'
               : ''}
-            <p>With gratitude,<br/>The FUPA Foundation Team</p>
+            <p>With gratitude,<br/>The Posterity Impact Initiative Team</p>
           </div>
         </div>
       `,
@@ -84,6 +84,9 @@ module.exports = async (req, res) => {
     // ---- 1. Verify this really came from Paystack ----
     // Paystack signs the payload with your SECRET key (HMAC SHA-512).
     // This is the pattern from Paystack's own Node/Express docs.
+    if (!process.env.PAYSTACK_SECRET_KEY) {
+      return res.status(503).json({ error: 'Payments are not set up yet.' });
+    }
     const signature = crypto
       .createHmac('sha512', process.env.PAYSTACK_SECRET_KEY)
       .update(JSON.stringify(req.body))

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Posterity Impact Initiative</title>
+    <meta name="description" content="Send a message to Posterity Impact Initiative.">
+    <link rel="icon" href="assets/logo.png">
+    <meta name="theme-color" content="#090511">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@1,8..60,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="brand" href="index.html">
+                <span class="brand__mark"><img src="assets/logo.png" alt="" width="31" height="33"></span>
+                <span class="brand__name"><span>Posterity</span><span>Impact Initiative</span></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">Menu</button>
+            <nav class="nav" id="nav" aria-label="Main">
+                <ul class="nav__list">
+                    <li><a class="nav__link" href="about.html">About</a></li>
+                    <li><a class="nav__link" href="our-work.html">Our Work</a></li>
+                    <li><a class="nav__link" href="opportunities.html">Opportunities</a></li>
+                    <li><a class="nav__link" href="transparency.html">Transparency</a></li>
+                    <li><a class="nav__link" href="news.html">News</a></li>
+                    <li><a class="nav__link" href="get-involved.html">Get Involved</a></li>
+                </ul>
+                <a class="btn" href="get-involved.html#give" data-donate>Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-head">
+            <div class="wrap">
+                <p class="crumbs"><a href="index.html">Home</a><span>/</span>Contact</p>
+                <h1>Talk to us</h1>
+                <p class="lead">Questions, partnership ideas or corrections to a listing. We read every message.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap split">
+                <div class="split__head">
+                    <h2>Send a message</h2>
+                    <p>Tell us who you are and what you have in mind, and we will reply by email.</p>
+                </div>
+                <form class="glass form" id="contactForm" novalidate>
+                    <div class="form__grid">
+                        <div class="modal__custom">
+                            <label for="contactName">Your name</label>
+                            <input type="text" id="contactName" class="modal__input" autocomplete="name" required>
+                        </div>
+                        <div class="modal__custom">
+                            <label for="contactEmail">Email address</label>
+                            <input type="email" id="contactEmail" class="modal__input" autocomplete="email" required>
+                        </div>
+                    </div>
+                    <div class="modal__custom">
+                        <label for="contactSubject">Subject</label>
+                        <input type="text" id="contactSubject" class="modal__input">
+                    </div>
+                    <div class="modal__custom">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" class="modal__input" rows="6" required></textarea>
+                    </div>
+                    <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <button type="submit" class="btn">Send message</button>
+                    <p class="form-note" id="contactNote" role="status"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="site-footer__top">
+                <p class="site-footer__line">Opportunity that <em>outlives us.</em></p>
+            </div>
+        </div>
+        <div class="wrap site-footer__grid">
+            <div>
+                <p class="site-footer__name">Posterity Impact Initiative</p>
+                <p>A Nigerian non-profit working so that the next generation inherits more opportunity than the last.</p>
+                <form class="newsletter" id="newsletterForm" novalidate>
+                    <label for="newsletterEmail">Get our updates by email</label>
+                    <div class="newsletter__row">
+                        <input type="email" id="newsletterEmail" class="modal__input" placeholder="you@example.com" autocomplete="email" required>
+                        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <button type="submit" class="btn">Subscribe</button>
+                    </div>
+                    <p class="form-note" id="newsletterNote" role="status"></p>
+                </form>
+            </div>
+            <div>
+                <h4>Organisation</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="our-work.html">Our Work</a></li>
+                    <li><a href="opportunities.html">Opportunities</a></li>
+                    <li><a href="transparency.html">Transparency</a></li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Take part</h4>
+                <ul>
+                    <li><a href="get-involved.html#give">Donate</a></li>
+                    <li><a href="get-involved.html#partner">Partner with us</a></li>
+                    <li><a href="get-involved.html#share">Spread the word</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrap site-footer__legal">
+            <p>&copy; 2026 Posterity Impact Initiative. Registered in Nigeria as Incorporated Trustees, No. 9995471.</p>
+        </div>
+    </footer>
+
+    <div class="modal" id="donateModal" role="dialog" aria-modal="true" aria-labelledby="donateTitle">
+        <div class="modal__overlay" id="modalOverlay"></div>
+        <div class="modal__content">
+            <button class="modal__close" id="modalClose" aria-label="Close">&times;</button>
+            <h2 class="modal__title" id="donateTitle">Make a donation</h2>
+            <p class="modal__text">Choose an amount. You will complete payment on Paystack's secure page.</p>
+
+            <div class="modal__amounts">
+                <button class="modal__amount" data-amount="5000">&#8358;5,000</button>
+                <button class="modal__amount" data-amount="10000">&#8358;10,000</button>
+                <button class="modal__amount modal__amount--active" data-amount="25000">&#8358;25,000</button>
+                <button class="modal__amount" data-amount="50000">&#8358;50,000</button>
+                <button class="modal__amount" data-amount="100000">&#8358;100,000</button>
+                <button class="modal__amount" data-amount="250000">&#8358;250,000</button>
+            </div>
+
+            <div class="modal__custom">
+                <label for="customAmount">Or another amount (&#8358;)</label>
+                <input type="number" id="customAmount" class="modal__input" min="1000" inputmode="numeric">
+            </div>
+            <div class="modal__custom">
+                <label for="donorName">Your name</label>
+                <input type="text" id="donorName" class="modal__input" autocomplete="name">
+            </div>
+            <div class="modal__custom">
+                <label for="donorEmail">Email address, for your receipt</label>
+                <input type="email" id="donorEmail" class="modal__input" autocomplete="email" required>
+            </div>
+
+            <div class="modal__frequency">
+                <label class="modal__radio"><input type="radio" name="frequency" value="once" checked> One-time</label>
+                <label class="modal__radio"><input type="radio" name="frequency" value="monthly"> Monthly</label>
+            </div>
+
+            <p class="modal__error" id="donateError" hidden></p>
+            <button class="btn btn--block" id="donateSubmit">Continue to payment</button>
+            <p class="modal__secure">Payments are processed by Paystack. Card details never reach our servers.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

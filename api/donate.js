@@ -32,6 +32,10 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  if (!process.env.PAYSTACK_SECRET_KEY) {
+    return res.status(503).json({ error: 'Online giving is not set up yet.' });
+  }
+
   try {
     const { name, email, amount, frequency } = req.body || {};
 
@@ -54,7 +58,7 @@ module.exports = async (req, res) => {
     // donor's card to a plan makes Paystack auto-charge them monthly.
     let planCode;
     if (isMonthly) {
-      const planName = `FUPA Monthly NGN ${naira}`;
+      const planName = `Posterity Impact Monthly NGN ${naira}`;
 
       // Reuse an existing plan for this amount if we made one before,
       // so we don't clutter the Paystack dashboard with duplicates.
