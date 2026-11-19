@@ -47,6 +47,13 @@ create table if not exists opportunities (
   created_at    timestamptz not null default now()
 );
 
+-- Listings found automatically carry verified = false until a person
+-- confirms them. source_id is the feed link, used to avoid duplicates.
+alter table opportunities add column if not exists verified  boolean not null default true;
+alter table opportunities add column if not exists source    text;
+alter table opportunities add column if not exists source_id text;
+create unique index if not exists opportunities_source_id_key on opportunities (source_id);
+
 -- Newsletter list
 create table if not exists subscribers (
   email      text primary key,

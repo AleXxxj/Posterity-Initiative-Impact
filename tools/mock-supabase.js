@@ -23,7 +23,7 @@ function seed() {
     title: item.title, organiser: item.organiser, type: item.type, summary: item.summary,
     eligibility: item.eligibility || null, url: item.url, opens: item.opens || null,
     deadline: item.deadline || null, deadline_note: item.deadlineNote || null,
-    checked: item.checked, published: true, created_at: new Date().toISOString(),
+    checked: item.checked, published: true, verified: true, source: null, source_id: null, created_at: new Date().toISOString(),
   }));
 }
 
@@ -39,8 +39,9 @@ function send(res, status, body) {
 
 function matches(row, params) {
   for (const [key, value] of params) {
-    if (['select', 'order', 'limit'].includes(key)) continue;
+    if (['select', 'order', 'limit', 'on_conflict'].includes(key)) continue;
     if (value.startsWith('eq.') && String(row[key]) !== value.slice(3)) return false;
+    if (value.startsWith('lt.') && !(row[key] != null && String(row[key]) < value.slice(3))) return false;
   }
   return true;
 }
@@ -68,13 +69,14 @@ function handleRest(req, res, url, body) {
   }
 
   if (req.method === 'POST') {
-    const pk = PRIMARY_KEYS[table] || 'id';
+    const pk = url.searchParams.get('on_conflict') || PRIMARY_KEYS[table] || 'id';
     const created = [];
     for (const input of Array.isArray(body) ? body : [body]) {
       const row = { created_at: new Date().toISOString(), ...input };
-      if (pk === 'id' && !row.id) row.id = crypto.randomUUID();
+      if (!PRIMARY_KEYS[table] && !row.id) row.id = crypto.randomUUID();
+      if (table === 'opportunities' && row.verified === undefined) row.verified = true;
       if (table === 'opportunities' && row.published === undefined) row.published = true;
-      const existing = rows.findIndex(r => r[pk] === row[pk]);
+      const existing = row[pk] == null ? -1 : rows.findIndex(r => r[pk] === row[pk]);
       if (existing >= 0) {
         if (prefer.includes('ignore-duplicates')) continue;
         if (prefer.includes('merge-duplicates')) { rows[existing] = { ...rows[existing], ...row }; created.push(rows[existing]); continue; }

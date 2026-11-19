@@ -174,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const meta = el('p', 'opp__meta');
         meta.appendChild(el('span', 'opp__type', item.type));
         meta.appendChild(el('span', 'opp__status', status.label));
+        if (item.verified === false) meta.appendChild(el('span', 'opp__auto', 'Auto-listed'));
         body.appendChild(meta);
 
         const title = el('h3');
@@ -195,13 +196,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             if (item.deadlineNote) body.appendChild(el('p', 'opp__note', item.deadlineNote + '.'));
             const foot = el('p', 'opp__foot');
-            const apply = el('a', 'arrow-link', 'Official page');
+            const apply = el('a', 'arrow-link', item.verified === false ? 'Read at source' : 'Official page');
             apply.href = item.url;
             apply.target = '_blank';
             apply.rel = 'noopener';
             foot.appendChild(apply);
             const checked = parseDay(item.checked);
-            if (checked) foot.appendChild(el('span', 'opp__checked', 'Checked ' + formatDay(checked)));
+            if (checked) {
+                foot.appendChild(el('span', 'opp__checked', item.verified === false
+                    ? 'Auto-listed ' + formatDay(checked) + ', not yet checked by our team'
+                    : 'Checked by our team ' + formatDay(checked)));
+            }
             body.appendChild(foot);
         }
         card.appendChild(body);
@@ -239,6 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const filters = document.getElementById('oppFilters');
                 const search = document.getElementById('oppSearch');
                 const showClosed = document.getElementById('oppShowClosed');
+                const checkedOnly = document.getElementById('oppCheckedOnly');
                 let activeType = 'All';
 
                 function draw() {
@@ -246,6 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const shown = items.filter(function (item) {
                         if (activeType !== 'All' && item.type !== activeType) return false;
                         if (!showClosed.checked && oppStatus(item).key === 'closed') return false;
+                        if (checkedOnly.checked && item.verified === false) return false;
                         return !query || (item.title + ' ' + item.organiser).toLowerCase().includes(query);
                     });
                     oppList.textContent = '';
@@ -267,6 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
                 search.addEventListener('input', draw);
                 showClosed.addEventListener('change', draw);
+                checkedOnly.addEventListener('change', draw);
                 const updated = parseDay(data.updated);
                 if (updated) setText('oppUpdated', 'List last reviewed ' + formatDay(updated) + '.');
                 draw();

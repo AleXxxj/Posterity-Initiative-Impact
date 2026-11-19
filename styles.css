@@ -503,3 +503,11 @@ input[type="date"].modal__input { color-scheme: dark; }
     .form__grid { grid-template-columns: 1fr; }
     .newsletter__row { flex-direction: column; }
 }
+
+/* ---------- Auto-listed opportunities ---------- */
+.opp__auto { color: var(--faint); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; letter-spacing: 0.12em; }
+.opp-toggles { display: flex; flex-wrap: wrap; gap: 4px 28px; }
+.admin__discover { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.admin__discover h2 { margin-bottom: 8px; }
+.admin__discover .form-hint { margin: 0; }
+.admin__discover .btn { margin-top: 0; }

@@ -7,6 +7,7 @@
 const { db, getAdmin, endpoint, text, isDate, isHttpUrl } = require('./_lib');
 
 const TYPES = ['Scholarship', 'Grant', 'Fellowship', 'Training', 'Competition', 'Job'];
+const today = () => new Date().toISOString().slice(0, 10);
 const UUID = /^[0-9a-f-]{36}$/i;
 
 // Database row -> the shape the website uses
@@ -24,6 +25,8 @@ function toPublic(row) {
     deadlineNote: row.deadline_note,
     checked: row.checked,
     published: row.published,
+    verified: row.verified !== false,
+    source: row.source || null,
   };
 }
 
@@ -52,6 +55,7 @@ function fromInput(body) {
       deadline_note: text(body.deadlineNote, 300),
       checked: body.checked,
       published: body.published !== false,
+      verified: true, // saved by a person, so it counts as checked
     },
   };
 }
@@ -81,6 +85,12 @@ module.exports = endpoint(async (req, res) => {
   if (!UUID.test(id)) return res.status(400).json({ error: 'Missing or invalid id.' });
 
   if (req.method === 'PUT') {
+    // "Mark as checked": confirm an auto-listed entry without retyping it
+    if (req.body && req.body.verifyOnly) {
+      const marked = await db(`opportunities?id=eq.${id}`, { method: 'PATCH', body: { verified: true, checked: today() }, prefer: 'return=representation' });
+      if (!marked.length) return res.status(404).json({ error: 'Not found.' });
+      return res.status(200).json({ item: toPublic(marked[0]) });
+    }
     const { row, error } = fromInput(req.body || {});
     if (error) return res.status(400).json({ error });
     const updated = await db(`opportunities?id=eq.${id}`, { method: 'PATCH', body: row, prefer: 'return=representation' });

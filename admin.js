@@ -121,12 +121,19 @@ document.addEventListener('DOMContentLoaded', function () {
         rows.textContent = '';
         data.items.forEach(function (item) {
             const tr = document.createElement('tr');
-            tr.appendChild(cell(item.title + (item.published ? '' : ' (hidden)')));
+            tr.appendChild(cell(item.title + (item.published ? '' : ' (hidden)') + (item.verified ? '' : ' [auto-listed]')));
             tr.appendChild(cell(item.type));
             tr.appendChild(cell(item.deadline || 'Varies'));
             tr.appendChild(cell(item.checked));
             const actions = document.createElement('td');
             actions.className = 'admin__actions';
+            if (!item.verified) {
+                actions.appendChild(actionButton('Mark checked', async function () {
+                    await api('/api/opportunities?id=' + item.id, { method: 'PUT', body: { verifyOnly: true } });
+                    note('adminNote', 'Marked as checked.');
+                    loadOpps();
+                }));
+            }
             actions.appendChild(actionButton('Edit', function () {
                 Object.keys(oppFields).forEach(key => { $(oppFields[key]).value = item[key] || ''; });
                 $('oppPublished').checked = item.published;
@@ -145,6 +152,15 @@ document.addEventListener('DOMContentLoaded', function () {
             rows.appendChild(tr);
         });
     }
+
+    $('oppDiscover').addEventListener('click', async function () {
+        note('adminNote', 'Searching the sources\u2026');
+        try {
+            const result = await api('/api/cron-discover', { method: 'POST' });
+            note('adminNote', result.added ? 'Added ' + result.added + ' new ' + (result.added === 1 ? 'opportunity.' : 'opportunities.') : 'Nothing new was found.');
+            loadOpps();
+        } catch (err) { note('adminNote', err.message, true); }
+    });
 
     $('oppCancel').addEventListener('click', resetOppForm);
     $('oppForm').addEventListener('submit', async function (e) {

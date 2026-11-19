@@ -247,14 +247,14 @@ PAGES["index.html"] = (
                                 <h3 id="heroOppTitle"></h3>
                                 <p id="heroOppOrg"></p>
                             </a>
-                            <p class="glass panel--note"><b id="heroOppCount">0</b> opportunities checked against official sources</p>
+                            <p class="glass panel--note"><b id="heroOppCount">0</b> open opportunities, updated every day</p>
                         </div>
                     </div>
                 </div>
 
                 <nav class="hero__index" aria-label="Start here">
                     <a href="our-work.html" data-glow><small>01</small><strong>Our work</strong><span>Education, mentorship and access.</span></a>
-                    <a href="opportunities.html" data-glow><small>02</small><strong>Opportunities</strong><span>Scholarships and grants, checked by us.</span></a>
+                    <a href="opportunities.html" data-glow><small>02</small><strong>Opportunities</strong><span>Scholarships and grants, updated daily.</span></a>
                     <a href="transparency.html" data-glow><small>03</small><strong>Transparency</strong><span>Every naira, on public record.</span></a>
                 </nav>
             </div>
@@ -288,7 +288,7 @@ PAGES["index.html"] = (
                 <div class="split__head">
                     <span class="eyebrow">Opportunities</span>
                     <h2>Closing soon</h2>
-                    <p>Scholarships, grants and trainings open to Nigerians, checked by us against the official source.</p>
+                    <p>Scholarships, grants and trainings open to Nigerians, updated every day.</p>
                     <a class="arrow-link" href="opportunities.html">See all opportunities</a>
                 </div>
                 <div class="opps" id="oppHome"></div>
@@ -445,9 +445,9 @@ PAGES["our-work.html"] = (
 # ------------------------------------------------------------------ Opportunities
 PAGES["opportunities.html"] = (
     f"Opportunities | {ORG}",
-    "Scholarships, grants, fellowships and trainings open to Nigerians, each checked against its official source.",
+    "Scholarships, grants, fellowships and trainings open to Nigerians, updated every day.",
     page_head("Opportunities", "Open opportunities for Nigerians",
-              "Scholarships, grants, fellowships and trainings. We check each one against its official page before listing it.")
+              "Scholarships, grants, fellowships and trainings, updated every day. Listings our team has confirmed are marked as checked.")
     + """
         <section class="section" data-opps>
             <div class="wrap">
@@ -461,7 +461,10 @@ PAGES["opportunities.html"] = (
                 <p class="table-note" id="oppCount" aria-live="polite"></p>
                 <div class="opps" id="oppList"></div>
                 <p class="table-empty" id="oppEmpty" hidden>No opportunities match that search.</p>
-                <label class="opp-closed"><input type="checkbox" id="oppShowClosed"> Show closed opportunities</label>
+                <div class="opp-toggles">
+                    <label class="opp-closed"><input type="checkbox" id="oppCheckedOnly"> Only show listings our team has checked</label>
+                    <label class="opp-closed"><input type="checkbox" id="oppShowClosed"> Show closed opportunities</label>
+                </div>
                 <p class="table-note" id="oppUpdated"></p>
             </div>
         </section>
@@ -473,7 +476,8 @@ PAGES["opportunities.html"] = (
                 </div>
                 <ul class="plain-list">
                     <li><strong>We do not run these programmes</strong><span>Each listing belongs to the organisation named on it. Apply only on its official page, which we link to.</span></li>
-                    <li><strong>Check the date yourself</strong><span>Deadlines change. Every listing shows the day we last checked it.</span></li>
+                    <li><strong>Know what "Auto-listed" means</strong><span>New listings are gathered automatically each day from other opportunity sites. Until our team confirms one, it is marked Auto-listed and links to the site that reported it.</span></li>
+                    <li><strong>Check the date yourself</strong><span>Deadlines change. Confirm the details on the organiser's own website before you apply.</span></li>
                     <li><strong>Never pay to apply through us</strong><span>We charge nothing and will never ask you for money or personal documents.</span></li>
                 </ul>
             </div>
@@ -751,6 +755,13 @@ PAGES["admin.html"] = (
                                 <button type="button" class="btn btn--ghost" id="oppCancel" hidden>Cancel edit</button>
                             </div>
                         </form>
+                        <div class="glass form admin__discover">
+                            <div>
+                                <h2>Automatic search</h2>
+                                <p class="form-hint">Runs every morning. Auto-listed entries stay labelled until you mark them checked.</p>
+                            </div>
+                            <button type="button" class="btn btn--ghost" id="oppDiscover">Search for new ones now</button>
+                        </div>
                         <div class="glass table-wrap admin__table"><table><thead><tr><th>Title</th><th>Type</th><th>Deadline</th><th>Checked</th><th></th></tr></thead><tbody id="oppRows"></tbody></table></div>
                     </div>
 

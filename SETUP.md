@@ -45,6 +45,7 @@ never put it in the code, a chat, or an email.
    | `ADMIN_EMAILS` | The staff emails from step 1.3, separated by commas |
    | `PAYSTACK_SECRET_KEY` | Secret key from Paystack |
    | `SITE_URL` | Your site address, such as `https://your-project.vercel.app` |
+   | `CRON_SECRET` | Any long random text. It protects the daily opportunity search |
 
 4. Press **Deploy**. Vercel gives you the site address.
 5. If the address differs from what you put in `SITE_URL`, correct it and redeploy.
@@ -70,6 +71,20 @@ This is how a completed payment reaches the ledger.
 Create an account at resend.com, verify a sending domain, and add `RESEND_API_KEY` and
 `EMAIL_FROM` in Vercel. Without these, donations still work; donors just get Paystack's
 own receipt.
+
+## How the opportunities board updates itself
+
+Every day at 06:00 UTC (07:00 in Nigeria), Vercel runs `/api/cron-discover`. It reads the
+feeds named in `api/_discover.js` and lists anything new that has a readable future
+deadline, is open to Nigerians or Africans, and shows no signs of a scam.
+
+These listings are marked **Auto-listed** on the site and link to the source that
+reported them. In the staff area you can press **Mark checked** once you have confirmed
+one on the organiser's own website, or **Delete** to remove it. Auto-listed entries
+that nobody checks are removed two weeks after their deadline.
+
+If you ran `supabase/schema.sql` before this feature existed, run it again. It is safe
+to repeat and adds the columns this needs.
 
 ## Day to day
 
